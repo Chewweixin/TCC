@@ -18,7 +18,7 @@ $items = fetchAll($result);
 ?>
 <?php include 'header.php'; ?>
 
-<h1 class="page-title">View and Edit Items</h1>
+<h1 class="page-title">VIEW and EDIT Items</h1>
 
 <?php if (isset($_SESSION['message'])): ?>
     <div class="message"><?php echo $_SESSION['message']; unset($_SESSION['message']); ?></div>
@@ -44,7 +44,7 @@ $items = fetchAll($result);
                         <td><?php echo htmlspecialchars($item['name']); ?></td>
                         <td><?php echo htmlspecialchars($item['category']); ?></td>
                         <td><?php echo $item['quantity']; ?></td>
-                        <td>$<?php echo number_format($item['price'], 2); ?></td>
+                        <td>RM<?php echo number_format($item['price'], 2); ?></td>
                         <td class="action-links">
                             <a href="edit.php?id=<?php echo $item['id']; ?>">Edit</a> | 
                             <a href="view.php?delete=<?php echo $item['id']; ?>" class="delete" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>

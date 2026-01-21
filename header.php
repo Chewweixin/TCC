@@ -7,7 +7,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOBANIDPETT - Bakery Management</title>
+    <title>Maltese - Bakery Management</title>
     <style>
         * {
             margin: 0;
@@ -44,6 +44,28 @@ $current_page = basename($_SERVER['PHP_SELF']);
             font-weight: bold;
             color: #d4a574;
             margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+
+        .logo-container span {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-weight: 700;
+            color: #d4a574;
             letter-spacing: 2px;
         }
         
@@ -132,19 +154,21 @@ $current_page = basename($_SERVER['PHP_SELF']);
         /* Home Page */
         .hero {
             text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('images/hero-bg.jpg');
+            padding: 80px 0;
+            background: 
+                linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), /* White overlay */
+                url('images/bakery-background.png') no-repeat center center;
             background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            margin-bottom: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .hero h1 {
             font-size: 2.8rem;
             color: #d4a574;
             margin-bottom: 20px;
-            font-weight: 300;
+            font-weight: 800;
             letter-spacing: 1px;
         }
         
@@ -307,7 +331,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
     <header>
         <div class="container">
-            <div class="logo">HOBANIDPETT</div>
+            <div class="logo">
+                <div class="logo-container">
+                    <img src="images/bakery-logo.png" alt="Maltese Bakery Logo" class="logo-img">
+                    <span>Maltese Bakery</span>
+                </div>
+            </div>
             <nav>
                 <a href="homepage.php" class="<?php echo ($current_page == 'homepage.php' || $current_page == 'index.php') ? 'active' : ''; ?>">HOME</a>
                 <a href="view.php" class="<?php echo $current_page == 'view.php' ? 'active' : ''; ?>">VIEW ITEMS</a>
